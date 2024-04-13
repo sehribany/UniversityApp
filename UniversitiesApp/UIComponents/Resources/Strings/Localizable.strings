@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  UniversitiesApp
+
+  Created by Şehriban Yıldırım on 29.03.2024.
+  
+*/
+//MARK: - Intro
+"Intro.Next"             = "Next";
+"Intro.Start"            = "Get Started";
+"Intro.firstTitle"       = "Universities in Turkey";
+"Intro.secondTitle"      = "List universities by their cities.";
+"Into.descriptionText1"  = "Navigate to the university you want to add to your favorites.";
+"Intro.descriptionText2" = "Explore the details of your dream university and gather information.";
+
