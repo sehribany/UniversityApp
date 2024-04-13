@@ -15,18 +15,13 @@ This project is the project of the 'İnvio 2024 Çekirge Program'.
 - Lottie
 
 ## Vertical Screenshots
-<style>
-    .responsive-video {
-        width: 100%;
-        max-width: 500px; /* Videonun maksimum genişliği */
-        height: auto;
-    }
-</style>
+| Başlık 1 | Başlık 2 |
+| - | - |
+| Hücre 1 | Hücre 2 |
+| Hücre 3 | Hücre 4 |
 
-<video controls class="responsive-video">
-    <source src="https://example.com/video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+https://github.com/sehribany/UniversityApp/assets/65239293/9985c630-1916-4f31-99b6-43024b2ba351
+
 
 ## Horizontal Screenshots
 
