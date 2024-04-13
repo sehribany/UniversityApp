@@ -22,7 +22,11 @@ https://github.com/sehribany/UniversityApp/assets/65239293/7b41ddcc-b4fd-4749-af
 
 ## Horizontal Screenshots
 
-https://github.com/sehribany/UniversityApp/assets/65239293/d28f2d6e-dd3c-403a-b5bd-33928dda3417
+
+https://github.com/sehribany/UniversityApp/assets/65239293/3c33c00b-b40b-4a43-9d76-7dceb11fa89e
+
+
+
 
 
 
