@@ -15,9 +15,9 @@ This project is the project of the 'İnvio 2024 Çekirge Program'.
 - Lottie
 
 ## Vertical Screenshots
-
-https://github.com/sehribany/UniversityApp/assets/65239293/925cedda-d098-4278-99e5-3c19629223f3
-
+<video controls width="500">
+  <source src="https://github.com/sehribany/UniversityApp/assets/65239293/925cedda-d098-4278-99e5-3c19629223f3" type="video/mp4">
+</video>
 
 ## Horizontal Screenshots
 
