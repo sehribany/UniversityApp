@@ -15,12 +15,12 @@ This project is the project of the 'İnvio 2024 Çekirge Program'.
 - Lottie
 
 ## Vertical Screenshots
-| Başlık 1 | Başlık 2 |
+| Splash Error | Splash Success |
 | - | - |
-| Hücre 1 | Hücre 2 |
+| [Hücre 1 ](https://github.com/sehribany/UniversityApp/assets/65239293/9985c630-1916-4f31-99b6-43024b2ba351)| Hücre 2 |
 | Hücre 3 | Hücre 4 |
 
-https://github.com/sehribany/UniversityApp/assets/65239293/9985c630-1916-4f31-99b6-43024b2ba351
+
 
 
 ## Horizontal Screenshots
