@@ -7,35 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9812FE542BCAF56100CF45CC /* animationButton.json in Resources */ = {isa = PBXBuildFile; fileRef = 9812FE532BCAF56100CF45CC /* animationButton.json */; };
+		9812FE582BCAFE9500CF45CC /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812FE572BCAFE9500CF45CC /* Closures.swift */; };
+		9812FE5A2BCB0E0F00CF45CC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812FE592BCB0E0F00CF45CC /* MainTabBarController.swift */; };
+		9812FE5E2BCB178B00CF45CC /* UniversityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812FE5D2BCB178B00CF45CC /* UniversityViewModel.swift */; };
+		9812FE602BCB179C00CF45CC /* UniversityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812FE5F2BCB179C00CF45CC /* UniversityViewController.swift */; };
+		9812FE622BCB17AE00CF45CC /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812FE612BCB17AE00CF45CC /* FavoriteViewController.swift */; };
+		9812FE642BCB17CC00CF45CC /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812FE632BCB17CC00CF45CC /* FavoriteViewModel.swift */; };
+		9812FE672BCB22B100CF45CC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9812FE662BCB22B100CF45CC /* Alamofire */; };
+		982652882BCBF6E40020C3B8 /* ProvinceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982652872BCBF6E40020C3B8 /* ProvinceCell.swift */; };
+		9826528B2BCBF6F90020C3B8 /* ProvinceCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826528A2BCBF6F90020C3B8 /* ProvinceCellModel.swift */; };
+		9826528E2BCBFF720020C3B8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9826528D2BCBFF720020C3B8 /* Kingfisher */; };
+		982652912BCBFFAD0020C3B8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982652902BCBFFAD0020C3B8 /* UIImage+Extension.swift */; };
 		983E42BD2BCADBBB00237EAB /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E42BC2BCADBBB00237EAB /* SplashViewModel.swift */; };
 		983E42BF2BCADBD400237EAB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E42BE2BCADBD400237EAB /* SplashViewController.swift */; };
 		98E57AF52BB6F65600E6AF5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E57AF42BB6F65600E6AF5D /* AppDelegate.swift */; };
 		98E57AFE2BB6F65800E6AF5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E57AFD2BB6F65800E6AF5D /* Assets.xcassets */; };
 		98E57B012BB6F65800E6AF5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E57AFF2BB6F65800E6AF5D /* LaunchScreen.storyboard */; };
 		98E57B0C2BB6F86200E6AF5D /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E57B0B2BB6F86200E6AF5D /* MainNavigationController.swift */; };
-		98E57B172BB6FD8F00E6AF5D /* IntroCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E57B162BB6FD8E00E6AF5D /* IntroCellModel.swift */; };
-		98E57B192BB6FDB800E6AF5D /* IntroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E57B182BB6FDB800E6AF5D /* IntroCell.swift */; };
 		98E57B1E2BB6FE7C00E6AF5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E57B1D2BB6FE7C00E6AF5D /* Images.xcassets */; };
 		98E57B202BB6FE8800E6AF5D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E57B1F2BB6FE8800E6AF5D /* Icons.xcassets */; };
 		98E57B222BB6FE9100E6AF5D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E57B212BB6FE9100E6AF5D /* Colors.xcassets */; };
 		98E57B252BB7020500E6AF5D /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 98E57B242BB7020500E6AF5D /* TinyConstraints */; };
-		98E57B272BB7099800E6AF5D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98E57B262BB7099800E6AF5D /* Localizable.strings */; };
-		98E57B2A2BB70AED00E6AF5D /* localizableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E57B292BB70AED00E6AF5D /* localizableExtensions.swift */; };
-		98E7BAA22BC7DBA0002DD4AC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 98E7BAA12BC7DBA0002DD4AC /* Kingfisher */; };
-		98E7BAA42BC7DBBF002DD4AC /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7BAA32BC7DBBF002DD4AC /* UIImage+Extensions.swift */; };
-		98E7BAA62BC7DD1B002DD4AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7BAA52BC7DD1B002DD4AC /* ViewController.swift */; };
 		98E7BAAB2BC9D242002DD4AC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 98E7BAAA2BC9D242002DD4AC /* Lottie */; };
 		98E7BAB32BC9D6C9002DD4AC /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7BAB22BC9D6C9002DD4AC /* Datas.swift */; };
 		98E7BAB52BC9D6E2002DD4AC /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7BAB42BC9D6E2002DD4AC /* University.swift */; };
 		98E7BAB72BC9D6F9002DD4AC /* UniversityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7BAB62BC9D6F9002DD4AC /* UniversityDetail.swift */; };
 		98E7BAB92BC9D723002DD4AC /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7BAB82BC9D723002DD4AC /* APICaller.swift */; };
-		98E7BABC2BC9D733002DD4AC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 98E7BABB2BC9D733002DD4AC /* Alamofire */; };
-		98E7BABE2BC9D733002DD4AC /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 98E7BABD2BC9D733002DD4AC /* AlamofireDynamic */; };
 		98E7BAC12BC9D783002DD4AC /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7BAC02BC9D783002DD4AC /* NetworkConstants.swift */; };
 		98E7BAC72BC9DDA3002DD4AC /* e.json in Resources */ = {isa = PBXBuildFile; fileRef = 98E7BAC22BC9DDA3002DD4AC /* e.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9812FE532BCAF56100CF45CC /* animationButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animationButton.json; sourceTree = "<group>"; };
+		9812FE572BCAFE9500CF45CC /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
+		9812FE592BCB0E0F00CF45CC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		9812FE5D2BCB178B00CF45CC /* UniversityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityViewModel.swift; sourceTree = "<group>"; };
+		9812FE5F2BCB179C00CF45CC /* UniversityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityViewController.swift; sourceTree = "<group>"; };
+		9812FE612BCB17AE00CF45CC /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		9812FE632BCB17CC00CF45CC /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		982652872BCBF6E40020C3B8 /* ProvinceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceCell.swift; sourceTree = "<group>"; };
+		9826528A2BCBF6F90020C3B8 /* ProvinceCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceCellModel.swift; sourceTree = "<group>"; };
+		982652902BCBFFAD0020C3B8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		983E42BC2BCADBBB00237EAB /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		983E42BE2BCADBD400237EAB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		98E57AF12BB6F65600E6AF5D /* UniversitiesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversitiesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,15 +57,9 @@
 		98E57B002BB6F65800E6AF5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98E57B022BB6F65800E6AF5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98E57B0B2BB6F86200E6AF5D /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainNavigationController.swift; path = UniversitiesApp/Scenes/MainNavigationController.swift; sourceTree = SOURCE_ROOT; };
-		98E57B162BB6FD8E00E6AF5D /* IntroCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCellModel.swift; sourceTree = "<group>"; };
-		98E57B182BB6FDB800E6AF5D /* IntroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCell.swift; sourceTree = "<group>"; };
 		98E57B1D2BB6FE7C00E6AF5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		98E57B1F2BB6FE8800E6AF5D /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		98E57B212BB6FE9100E6AF5D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		98E57B262BB7099800E6AF5D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		98E57B292BB70AED00E6AF5D /* localizableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = localizableExtensions.swift; sourceTree = "<group>"; };
-		98E7BAA32BC7DBBF002DD4AC /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
-		98E7BAA52BC7DD1B002DD4AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		98E7BAB22BC9D6C9002DD4AC /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
 		98E7BAB42BC9D6E2002DD4AC /* University.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
 		98E7BAB62BC9D6F9002DD4AC /* UniversityDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityDetail.swift; sourceTree = "<group>"; };
@@ -66,9 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98E7BAA22BC7DBA0002DD4AC /* Kingfisher in Frameworks */,
-				98E7BABC2BC9D733002DD4AC /* Alamofire in Frameworks */,
-				98E7BABE2BC9D733002DD4AC /* AlamofireDynamic in Frameworks */,
+				9826528E2BCBFF720020C3B8 /* Kingfisher in Frameworks */,
+				9812FE672BCB22B100CF45CC /* Alamofire in Frameworks */,
 				98E57B252BB7020500E6AF5D /* TinyConstraints in Frameworks */,
 				98E7BAAB2BC9D242002DD4AC /* Lottie in Frameworks */,
 			);
@@ -77,12 +83,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9812FE552BCAFE4000CF45CC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9812FE562BCAFE4F00CF45CC /* Closures */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9812FE562BCAFE4F00CF45CC /* Closures */ = {
+			isa = PBXGroup;
+			children = (
+				9812FE572BCAFE9500CF45CC /* Closures.swift */,
+			);
+			path = Closures;
+			sourceTree = "<group>";
+		};
+		9812FE5B2BCB175400CF45CC /* University */ = {
+			isa = PBXGroup;
+			children = (
+				9812FE5D2BCB178B00CF45CC /* UniversityViewModel.swift */,
+				9812FE5F2BCB179C00CF45CC /* UniversityViewController.swift */,
+			);
+			path = University;
+			sourceTree = "<group>";
+		};
+		9812FE5C2BCB175B00CF45CC /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				9812FE632BCB17CC00CF45CC /* FavoriteViewModel.swift */,
+				9812FE612BCB17AE00CF45CC /* FavoriteViewController.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		982652852BCBF6800020C3B8 /* University */ = {
+			isa = PBXGroup;
+			children = (
+				9826528A2BCBF6F90020C3B8 /* ProvinceCellModel.swift */,
+				982652872BCBF6E40020C3B8 /* ProvinceCell.swift */,
+			);
+			path = University;
+			sourceTree = "<group>";
+		};
+		9826528F2BCBFF9A0020C3B8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				982652902BCBFFAD0020C3B8 /* UIImage+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		983E42BB2BCADBAC00237EAB /* Splash */ = {
 			isa = PBXGroup;
 			children = (
 				983E42BC2BCADBBB00237EAB /* SplashViewModel.swift */,
 				983E42BE2BCADBD400237EAB /* SplashViewController.swift */,
-				98E7BAA52BC7DD1B002DD4AC /* ViewController.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -110,6 +166,7 @@
 				98E57B092BB6F82A00E6AF5D /* Scenes */,
 				98E57B132BB6FD3F00E6AF5D /* UIComponents */,
 				98E7BAAF2BC9D66C002DD4AC /* DataProvider */,
+				9812FE552BCAFE4000CF45CC /* Utilities */,
 				98E57AFF2BB6F65800E6AF5D /* LaunchScreen.storyboard */,
 				98E57B022BB6F65800E6AF5D /* Info.plist */,
 			);
@@ -129,6 +186,8 @@
 			children = (
 				98E57B0A2BB6F83100E6AF5D /* Main */,
 				983E42BB2BCADBAC00237EAB /* Splash */,
+				9812FE5B2BCB175400CF45CC /* University */,
+				9812FE5C2BCB175B00CF45CC /* Favorite */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -137,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				98E57B0B2BB6F86200E6AF5D /* MainNavigationController.swift */,
+				9812FE592BCB0E0F00CF45CC /* MainTabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -144,7 +204,7 @@
 		98E57B132BB6FD3F00E6AF5D /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				98E7BA9F2BC7DB91002DD4AC /* Extensions */,
+				9826528F2BCBFF9A0020C3B8 /* Extension */,
 				98E57B1A2BB6FE4100E6AF5D /* Resources */,
 				98E57B142BB6FD7D00E6AF5D /* Cell */,
 			);
@@ -154,18 +214,9 @@
 		98E57B142BB6FD7D00E6AF5D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				98E57B152BB6FD8300E6AF5D /* Intro */,
+				982652852BCBF6800020C3B8 /* University */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		98E57B152BB6FD8300E6AF5D /* Intro */ = {
-			isa = PBXGroup;
-			children = (
-				98E57B162BB6FD8E00E6AF5D /* IntroCellModel.swift */,
-				98E57B182BB6FDB800E6AF5D /* IntroCell.swift */,
-			);
-			path = Intro;
 			sourceTree = "<group>";
 		};
 		98E57B1A2BB6FE4100E6AF5D /* Resources */ = {
@@ -173,7 +224,6 @@
 			children = (
 				98E7BAAE2BC9D65B002DD4AC /* Lottie */,
 				98E57B1B2BB6FE5800E6AF5D /* Assets */,
-				98E57B1C2BB6FE5F00E6AF5D /* Strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -189,27 +239,11 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		98E57B1C2BB6FE5F00E6AF5D /* Strings */ = {
-			isa = PBXGroup;
-			children = (
-				98E57B262BB7099800E6AF5D /* Localizable.strings */,
-				98E57B292BB70AED00E6AF5D /* localizableExtensions.swift */,
-			);
-			path = Strings;
-			sourceTree = "<group>";
-		};
-		98E7BA9F2BC7DB91002DD4AC /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				98E7BAA32BC7DBBF002DD4AC /* UIImage+Extensions.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		98E7BAAE2BC9D65B002DD4AC /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
 				98E7BAC22BC9DDA3002DD4AC /* e.json */,
+				9812FE532BCAF56100CF45CC /* animationButton.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -268,10 +302,9 @@
 			name = UniversitiesApp;
 			packageProductDependencies = (
 				98E57B242BB7020500E6AF5D /* TinyConstraints */,
-				98E7BAA12BC7DBA0002DD4AC /* Kingfisher */,
 				98E7BAAA2BC9D242002DD4AC /* Lottie */,
-				98E7BABB2BC9D733002DD4AC /* Alamofire */,
-				98E7BABD2BC9D733002DD4AC /* AlamofireDynamic */,
+				9812FE662BCB22B100CF45CC /* Alamofire */,
+				9826528D2BCBFF720020C3B8 /* Kingfisher */,
 			);
 			productName = UniversitiesApp;
 			productReference = 98E57AF12BB6F65600E6AF5D /* UniversitiesApp.app */;
@@ -303,9 +336,9 @@
 			mainGroup = 98E57AE82BB6F65600E6AF5D;
 			packageReferences = (
 				98E57B232BB7020500E6AF5D /* XCRemoteSwiftPackageReference "TinyConstraints" */,
-				98E7BAA02BC7DBA0002DD4AC /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				98E7BAA92BC9D242002DD4AC /* XCRemoteSwiftPackageReference "lottie-spm" */,
-				98E7BABA2BC9D733002DD4AC /* XCRemoteSwiftPackageReference "Alamofire" */,
+				9812FE652BCB22B100CF45CC /* XCRemoteSwiftPackageReference "Alamofire" */,
+				9826528C2BCBFF720020C3B8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 98E57AF22BB6F65600E6AF5D /* Products */;
 			projectDirPath = "";
@@ -322,7 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E57B222BB6FE9100E6AF5D /* Colors.xcassets in Resources */,
-				98E57B272BB7099800E6AF5D /* Localizable.strings in Resources */,
+				9812FE542BCAF56100CF45CC /* animationButton.json in Resources */,
 				98E7BAC72BC9DDA3002DD4AC /* e.json in Resources */,
 				98E57B1E2BB6FE7C00E6AF5D /* Images.xcassets in Resources */,
 				98E57B012BB6F65800E6AF5D /* LaunchScreen.storyboard in Resources */,
@@ -340,17 +373,21 @@
 			files = (
 				983E42BD2BCADBBB00237EAB /* SplashViewModel.swift in Sources */,
 				98E7BAC12BC9D783002DD4AC /* NetworkConstants.swift in Sources */,
+				9812FE582BCAFE9500CF45CC /* Closures.swift in Sources */,
+				982652912BCBFFAD0020C3B8 /* UIImage+Extension.swift in Sources */,
+				982652882BCBF6E40020C3B8 /* ProvinceCell.swift in Sources */,
 				98E57AF52BB6F65600E6AF5D /* AppDelegate.swift in Sources */,
-				98E57B2A2BB70AED00E6AF5D /* localizableExtensions.swift in Sources */,
+				9826528B2BCBF6F90020C3B8 /* ProvinceCellModel.swift in Sources */,
 				98E7BAB92BC9D723002DD4AC /* APICaller.swift in Sources */,
-				98E7BAA62BC7DD1B002DD4AC /* ViewController.swift in Sources */,
-				98E57B172BB6FD8F00E6AF5D /* IntroCellModel.swift in Sources */,
 				98E7BAB72BC9D6F9002DD4AC /* UniversityDetail.swift in Sources */,
 				98E57B0C2BB6F86200E6AF5D /* MainNavigationController.swift in Sources */,
+				9812FE5A2BCB0E0F00CF45CC /* MainTabBarController.swift in Sources */,
+				9812FE5E2BCB178B00CF45CC /* UniversityViewModel.swift in Sources */,
 				98E7BAB32BC9D6C9002DD4AC /* Datas.swift in Sources */,
 				98E7BAB52BC9D6E2002DD4AC /* University.swift in Sources */,
-				98E57B192BB6FDB800E6AF5D /* IntroCell.swift in Sources */,
-				98E7BAA42BC7DBBF002DD4AC /* UIImage+Extensions.swift in Sources */,
+				9812FE622BCB17AE00CF45CC /* FavoriteViewController.swift in Sources */,
+				9812FE602BCB179C00CF45CC /* UniversityViewController.swift in Sources */,
+				9812FE642BCB17CC00CF45CC /* FavoriteViewModel.swift in Sources */,
 				983E42BF2BCADBD400237EAB /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,20 +608,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9812FE652BCB22B100CF45CC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "http://github.com//Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		9826528C2BCBFF720020C3B8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 		98E57B232BB7020500E6AF5D /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/roberthein/TinyConstraints.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 4.0.2;
-			};
-		};
-		98E7BAA02BC7DBA0002DD4AC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.11.0;
 			};
 		};
 		98E7BAA92BC9D242002DD4AC /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
@@ -595,41 +640,28 @@
 				minimumVersion = 4.4.2;
 			};
 		};
-		98E7BABA2BC9D733002DD4AC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "http://github.com//Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9812FE662BCB22B100CF45CC /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9812FE652BCB22B100CF45CC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		9826528D2BCBFF720020C3B8 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9826528C2BCBFF720020C3B8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		98E57B242BB7020500E6AF5D /* TinyConstraints */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 98E57B232BB7020500E6AF5D /* XCRemoteSwiftPackageReference "TinyConstraints" */;
 			productName = TinyConstraints;
 		};
-		98E7BAA12BC7DBA0002DD4AC /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 98E7BAA02BC7DBA0002DD4AC /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
 		98E7BAAA2BC9D242002DD4AC /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 98E7BAA92BC9D242002DD4AC /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
-		};
-		98E7BABB2BC9D733002DD4AC /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 98E7BABA2BC9D733002DD4AC /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		98E7BABD2BC9D733002DD4AC /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 98E7BABA2BC9D733002DD4AC /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

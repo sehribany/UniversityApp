@@ -39,7 +39,6 @@ class SplashViewController: UIViewController {
     
     private func subscribeViewModelEvents() {
         viewModel.didSuccessFetchProvince = {
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [self] in
                 self.buttonanimationView.stop()
                 self.buttonanimationView.isUserInteractionEnabled = true
