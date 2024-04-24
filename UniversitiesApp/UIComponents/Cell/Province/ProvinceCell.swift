@@ -12,14 +12,6 @@ class ProvinceCell: UITableViewCell {
 
     static let identifier = "ProvinceCell"
     
-    private let iconBook: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "icBook")
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-
     private let provinceLabel: UILabel = {
         let label = UILabel()
         label.textColor = .appBlack
@@ -27,7 +19,7 @@ class ProvinceCell: UITableViewCell {
         return label
     }()
     
-    private let iconImage: UIImageView = {
+    let iconImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,38 +42,32 @@ class ProvinceCell: UITableViewCell {
     }
 }
 
-//MARK: -UILayout and Set
+//MARK: - UILayout and Set
 extension ProvinceCell{
     private func addSubViews(){
-        addIcon()
-        addProvinceLabel()
         addImageIcon()
-    }
-    
-    private func addIcon(){
-        addSubview(iconBook)
-        iconBook.leadingToSuperview().constant = 20
-        iconBook.centerYToSuperview()
-    }
-    private func addProvinceLabel(){
-        addSubview(provinceLabel)
-        provinceLabel.leadingToSuperview().constant = 52
-        provinceLabel.centerYToSuperview()
+        addProvinceLabel()
     }
     
     private func addImageIcon(){
         addSubview(iconImage)
-        iconImage.trailingToSuperview().constant = -23
+        iconImage.leadingToSuperview().constant = 20
         iconImage.centerYToSuperview()
     }
-    
+
+    private func addProvinceLabel(){
+        addSubview(provinceLabel)
+        provinceLabel.leadingToTrailing(of: iconImage).constant = 10
+        provinceLabel.centerYToSuperview()
+    }
+        
     public func set(viewModel: ProvinceCellProtocol){
         self.viewModel = viewModel
         provinceLabel.text = viewModel.province.province
-        if !viewModel.province.universities.isEmpty{
-            iconImage.image = UIImage(named: "icPlus")
+        if viewModel.province.universities.isEmpty{
+            iconImage.image = nil
         }else{
-            iconImage.image = UIImage()
+            iconImage.image = UIImage(named: "icPlus")
         }
     }
 }
