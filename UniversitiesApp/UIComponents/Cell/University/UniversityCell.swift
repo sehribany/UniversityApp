@@ -10,6 +10,13 @@ import UIKit
 class UniversityCell: UITableViewCell {
     static let identifier = "UniversityCell"
     
+    let iconImagePlus: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     private let universityLabel: UILabel = {
         let label = UILabel()
         label.textColor = .appBlack
@@ -43,13 +50,21 @@ class UniversityCell: UITableViewCell {
 //MARK: - UILayout and Set
 extension UniversityCell{
     private func addSubViews(){
+        addImageIcons()
         addProvinceLabel()
         addImageIcon()
+    }
+    
+    private func addImageIcons(){
+        addSubview(iconImagePlus)
+        iconImagePlus.leadingToSuperview().constant = 20
+        iconImagePlus.centerYToSuperview()
     }
 
     private func addProvinceLabel(){
         addSubview(universityLabel)
-        universityLabel.leadingToSuperview().constant = 52
+        universityLabel.leadingToSuperview().constant = 50
+        universityLabel.trailingToSuperview().constant = -80
         universityLabel.centerYToSuperview()
     }
     
@@ -60,8 +75,18 @@ extension UniversityCell{
     }
     
     public func set(viewModel: UniversityCellProtocol){
-        guard let viewModel = viewModel.university.first else{ return}
-        universityLabel.text = viewModel.name
+        self.viewModel = viewModel
+        let university = viewModel.university
+        universityLabel.text =  university.map({ $0.name}).joined()
+
+        let additionalInfoExists = university.map({ $0.adress}).contains("-") && university.map({ $0.email}).contains("-") && university.map({ $0.fax}).contains("-") && university.map({ $0.phone}).contains("-") && university.map({ $0.rector}).contains("-") && university.map({ $0.website}).contains("-")
+            
         iconImage.image = UIImage(named: "icFavorite")
+        
+        if !additionalInfoExists {
+            iconImagePlus.image = UIImage(named: "icPlus")
+        } else {
+            iconImagePlus.image = nil
+        }
     }
 }
