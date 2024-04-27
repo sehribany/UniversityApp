@@ -25,17 +25,19 @@ class UniversityCell: UITableViewCell {
         return label
     }()
     
-    private let iconImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
+    private let favoriteButton: UIButton = {
+        let button = UIButton()
+        button.contentMode = .scaleAspectFit
+        button.isUserInteractionEnabled = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     weak var viewModel : UniversityCellProtocol?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
         addSubViews()
     }
     
@@ -47,12 +49,13 @@ class UniversityCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 }
+
 //MARK: - UILayout and Set
 extension UniversityCell{
     private func addSubViews(){
         addImageIcons()
         addProvinceLabel()
-        addImageIcon()
+        addFavoriteButton()
     }
     
     private func addImageIcons(){
@@ -68,21 +71,22 @@ extension UniversityCell{
         universityLabel.centerYToSuperview()
     }
     
-    private func addImageIcon(){
-        addSubview(iconImage)
-        iconImage.trailingToSuperview().constant = -23
-        iconImage.centerYToSuperview()
+    private func addFavoriteButton(){
+        addSubview(favoriteButton)
+        favoriteButton.trailingToSuperview().constant = -23
+        favoriteButton.centerYToSuperview()
+        favoriteButton.width(40)
+        favoriteButton.height(40)
     }
     
     public func set(viewModel: UniversityCellProtocol){
         self.viewModel = viewModel
+        favoriteButton.setImage(UIImage(named:"icFavorite"), for: .normal)
         let university = viewModel.university
-        universityLabel.text =  university.map({ $0.name}).joined()
+        universityLabel.text =  university.map({$0.name}).joined()
 
         let additionalInfoExists = university.map({ $0.adress}).contains("-") && university.map({ $0.email}).contains("-") && university.map({ $0.fax}).contains("-") && university.map({ $0.phone}).contains("-") && university.map({ $0.rector}).contains("-") && university.map({ $0.website}).contains("-")
             
-        iconImage.image = UIImage(named: "icFavorite")
-        
         if !additionalInfoExists {
             iconImagePlus.image = UIImage(named: "icPlus")
         } else {
