@@ -12,6 +12,14 @@ class ProvinceCell: UITableViewCell {
 
     static let identifier = "ProvinceCell"
     
+    private let cellView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private let provinceLabel: UILabel = {
         let label = UILabel()
         label.textColor = .appBlack
@@ -26,7 +34,7 @@ class ProvinceCell: UITableViewCell {
         return imageView
     }()
     
-    weak var viewModel : ProvinceCellProtocol?
+    weak var viewModel: ProvinceCellProtocol?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -45,20 +53,28 @@ class ProvinceCell: UITableViewCell {
 //MARK: - UILayout and Set
 extension ProvinceCell{
     private func addSubViews(){
+        addView()
         addImageIcon()
         addProvinceLabel()
     }
     
+    private func addView(){
+        addSubview(cellView)
+        cellView.edgesToSuperview()
+    }
+    
     private func addImageIcon(){
-        addSubview(iconImage)
-        iconImage.leadingToSuperview().constant = 20
-        iconImage.centerYToSuperview()
+        cellView.addSubview(iconImage)
+        //addSubview(iconImage)
+        //iconImage.leadingToSuperview().constant = 20
+        //iconImage.centerYToSuperview()
     }
 
     private func addProvinceLabel(){
-        addSubview(provinceLabel)
-        provinceLabel.leadingToTrailing(of: iconImage).constant = 10
-        provinceLabel.centerYToSuperview()
+        cellView.addSubview(provinceLabel)
+        //addSubview(provinceLabel)
+        //provinceLabel.leadingToTrailing(of: iconImage).constant = 10
+        //provinceLabel.centerYToSuperview()
     }
         
     public func set(viewModel: ProvinceCellProtocol){
