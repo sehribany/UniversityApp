@@ -82,7 +82,7 @@ extension SplashViewController{
 // MARK: -Actions
 extension SplashViewController {
     @objc func handleAnimationTap() {
-        let nextViewController = MainTabBarController()
+        let nextViewController = UniversityViewController()
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     

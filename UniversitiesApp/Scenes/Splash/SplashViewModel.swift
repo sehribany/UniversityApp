@@ -13,6 +13,9 @@ protocol SplashViewDataSource{
     
     func numberOfItemsAt2(section:Int) -> Int
     func cellItemAt2(indexPath: IndexPath) -> UniversityCellProtocol
+    
+    func numberOfItemsAt3(section: Int) -> Int
+    func cellItemAt3(indexPath: IndexPath) -> DetailCellProtocol
 }
 
 protocol SplashViewEventSource{
@@ -24,6 +27,7 @@ protocol SplashViewProtocol: SplashViewDataSource, SplashViewEventSource{}
 final class SplashViewModel: SplashViewProtocol{
     var cellItems: [ProvinceCellModel] = []
     var expandableCellItems: [UniversityCellModel] = []
+    var detailExpandableCellItems: [DetailCellModel] = []
     
     var page = 1
     var isPagingEnabled  = false
@@ -46,6 +50,14 @@ final class SplashViewModel: SplashViewProtocol{
     func cellItemAt2(indexPath: IndexPath) -> UniversityCellProtocol {
         expandableCellItems[indexPath.row]
     }
+    
+    func numberOfItemsAt3(section: Int) -> Int {
+        detailExpandableCellItems.count
+    }
+    
+    func cellItemAt3(indexPath: IndexPath) -> DetailCellProtocol {
+        detailExpandableCellItems[indexPath.row]
+    }
 }
 
 extension SplashViewModel{
@@ -57,8 +69,10 @@ extension SplashViewModel{
             case .success(let response):
                 let items  = response.data.map({ProvinceCellModel(province: $0)})
                 self.cellItems.append(contentsOf: items)
-                let itemss = response.data.map({UniversityCellModel(university: $0.universities)})
-                self.expandableCellItems.append(contentsOf: itemss)
+                let items2 = response.data.map({UniversityCellModel(university: $0.universities)})
+                self.expandableCellItems.append(contentsOf: items2)
+                let items3 = response.data.map({DetailCellModel(detail: $0.universities)})
+                self.detailExpandableCellItems.append(contentsOf: items3)
                 self.page += 1
                 self.isPagingEnabled =  response.currentPage < response.totalPage
                 self.didSuccessFetchProvince?()
