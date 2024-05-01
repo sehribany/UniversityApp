@@ -12,14 +12,6 @@ class ProvinceCell: UITableViewCell {
 
     static let identifier = "ProvinceCell"
     
-    private let cellView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .red
-        view.layer.cornerRadius = 10
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     private let provinceLabel: UILabel = {
         let label = UILabel()
         label.textColor = .appBlack
@@ -53,37 +45,29 @@ class ProvinceCell: UITableViewCell {
 //MARK: - UILayout and Set
 extension ProvinceCell{
     private func addSubViews(){
-        addView()
         addImageIcon()
         addProvinceLabel()
     }
     
-    private func addView(){
-        addSubview(cellView)
-        cellView.edgesToSuperview()
-    }
-    
     private func addImageIcon(){
-        cellView.addSubview(iconImage)
-        //addSubview(iconImage)
-        //iconImage.leadingToSuperview().constant = 20
-        //iconImage.centerYToSuperview()
+        addSubview(iconImage)
+        iconImage.leadingToSuperview().constant = 20
+        iconImage.centerYToSuperview()
     }
 
     private func addProvinceLabel(){
-        cellView.addSubview(provinceLabel)
-        //addSubview(provinceLabel)
-        //provinceLabel.leadingToTrailing(of: iconImage).constant = 10
-        //provinceLabel.centerYToSuperview()
+        addSubview(provinceLabel)
+        provinceLabel.leadingToSuperview().constant = 55
+        provinceLabel.centerYToSuperview()
     }
         
-    public func set(viewModel: ProvinceCellProtocol){
+    public func set(viewModel: ProvinceCellProtocol, isSelected: Bool){
         self.viewModel = viewModel
         provinceLabel.text = viewModel.province.province
         if viewModel.province.universities.isEmpty{
             iconImage.image = nil
         }else{
-            iconImage.image = UIImage(named: "icPlus")
+            iconImage.image = isSelected ? UIImage(named: "icMinus") : UIImage(named: "icPlus")
         }
     }
 }
