@@ -33,7 +33,7 @@ https://github.com/sehribany/UniversityApp/assets/65239293/3c33c00b-b40b-4a43-9d
 #### Splash Screen Success
 https://github.com/sehribany/UniversityApp/assets/65239293/7ec3949a-a618-4cc0-98f0-451094683069
 ### Main and WebSite Screen
-https://github.com/sehribany/UniversityApp/assets/65239293/57f89a67-eb88-4520-8650-8459de061581
+https://github.com/sehribany/UniversityApp/assets/65239293/49d875b6-4463-46e7-bd94-c747aa41cf94
 
 <img width="350" alt="1" src="https://github.com/sehribany/UniversityApp/assets/65239293/f4b465b2-4e5c-4992-bb9c-82bd9a26f528"> 
 <img width="350" alt="1" src="https://github.com/sehribany/UniversityApp/assets/65239293/ab728471-faab-4b94-8ef9-6929209c49de"> 
