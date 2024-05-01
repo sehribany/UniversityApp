@@ -21,10 +21,11 @@ https://github.com/sehribany/UniversityApp/assets/65239293/9d34b29f-203d-43d9-81
 https://github.com/sehribany/UniversityApp/assets/65239293/7b41ddcc-b4fd-4749-afae-456a42b3c51d
 
 ### Main Screen
-<img width="320" alt="1" src="https://github.com/sehribany/UniversityApp/assets/65239293/9e1b1104-dfbd-416a-803f-1bd5824d5c93"> 
-<img width="320" alt="1" src="https://github.com/sehribany/UniversityApp/assets/65239293/9e1b1104-dfbd-416a-803f-1bd5824d5c93"> 
+<img width="310" alt="1" src="https://github.com/sehribany/UniversityApp/assets/65239293/9e1b1104-dfbd-416a-803f-1bd5824d5c93"> 
+<img width="310" alt="1" src="https://github.com/sehribany/UniversityApp/assets/65239293/d4132807-9c9c-4859-8863-83f0069b9cb5">
+<img width="310" alt="1" src="https://github.com/sehribany/UniversityApp/assets/65239293/567b5d67-3c69-401b-bfc2-aed9794ee464">
 
-## Horizontal Screenshots
+## Horizontal Screenshots 
 #### Splash Screen Error
 https://github.com/sehribany/UniversityApp/assets/65239293/3c33c00b-b40b-4a43-9d76-7dceb11fa89e
 #### Splash Screen Success
