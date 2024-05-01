@@ -20,9 +20,9 @@ class MainNavigationController: UINavigationController {
     
     private func configureContents(){
         let backImage = UIImage(named: "icBack")?
-            .resize(to: .init(width: 12, height: 18))
+            .resize(to: .init(width: 25, height: 20))
             .withRenderingMode(.alwaysTemplate)
-            .withAlignmentRectInsets(.init(top: 0, left: 0, bottom: -2, right: 0))
+            .withAlignmentRectInsets(.init(top: 0, left: 0, bottom: 0, right: 0))
         
         navigationBar.barTintColor = .appBlack
         navigationBar.shadowImage  = UIImage()
