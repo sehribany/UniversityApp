@@ -9,9 +9,21 @@ import UIKit
 import TinyConstraints
 
 class UniversityViewController: UIViewController {
+    
+    private let iconButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "icexpandcollapse")?.resize(to: .init(width: 40, height: 40))
+            .withRenderingMode(.alwaysOriginal), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(iconButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
     let customTableView = CustomTableView()
     var viewModel = SplashViewModel()
-    var expandedSections = Set<Int>()
+    
+    var expandedProvinceSections  = Set<Int>()
+    var expandedUniversityDetails = Set<IndexPath>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,26 +38,49 @@ class UniversityViewController: UIViewController {
             self?.customTableView.tableView.reloadData()
         }
     }
+    
+    @objc private func iconButtonTapped() {
+        expandedProvinceSections.removeAll()
+        expandedUniversityDetails.removeAll()
+        customTableView.tableView.reloadData()
+    }
 }
 
 //MARK: - UILayout and Configure
 extension UniversityViewController{
     private func addSubViews(){
         addTableView()
+        addButton()
     }
     
     private func addTableView(){
         view.addSubview(customTableView)
-        customTableView.edgesToSuperview()
+        customTableView.edgesToSuperview(excluding: .top)
+        customTableView.topToSuperview().constant = 80
+    }
+    
+    private func addButton(){
+        view.addSubview(iconButton)
+        iconButton.bottomToSuperview().constant = -20
+        iconButton.trailingToSuperview().constant = -20
     }
     
     private func configure(){
-        view.backgroundColor = .appWhite
+        view.backgroundColor = . appWhite
+        navigationItem.title = "Universities"
+        navigationItem.titleView?.tintColor = .appBlack
+        let favoriteButton = UIBarButtonItem(image: UIImage(named: "icFavorite"), style: .plain, target: self, action: #selector(favoriteButtonTapped))
+        navigationItem.rightBarButtonItem = favoriteButton
+        navigationItem.hidesBackButton = true
         customTableView.tableView.dataSource = self
         customTableView.tableView.delegate   = self
-        
         customTableView.tableView.register(ProvinceCell.self, forCellReuseIdentifier: ProvinceCell.identifier)
         customTableView.tableView.register(UniversityCell.self, forCellReuseIdentifier: UniversityCell.identifier)
+        customTableView.tableView.register(DetailCell.self, forCellReuseIdentifier: DetailCell.identifier)
+    }
+    
+    @objc private func favoriteButtonTapped() {
+        navigationController?.pushViewController(FavoriteViewController(), animated: true)
     }
 }
 //MARK: -UITableViewDataSource & UITableViewDelegate
@@ -56,43 +91,89 @@ extension UniversityViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if expandedSections.contains(section) {
-            return 1 + viewModel.cellItemAt(indexPath: IndexPath(row: section, section: 0)).province.universities.count
-        } else {
-            return 1
+        let baseCount = 1
+        if expandedProvinceSections.contains(section) {
+            let province = viewModel.cellItemAt(indexPath: IndexPath(row: section, section: 0)).province
+            var total = baseCount + province.universities.count
+            province.universities.enumerated().forEach { index, _ in
+                let detailIndexPath = IndexPath(row: index, section: section)
+                if expandedUniversityDetails.contains(detailIndexPath) {
+                    total += 1
+                }
+            }
+            return total
         }
+        return baseCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: ProvinceCell.identifier, for: indexPath) as! ProvinceCell
-            cell.backgroundColor = .appYellow.withAlphaComponent(0.9)
+            cell.backgroundColor = .appYellow
             let cellItem = viewModel.cellItemAt(indexPath: IndexPath(row: indexPath.section, section: 0))
-            cell.set(viewModel: cellItem)
+            let isSelected = expandedProvinceSections.contains(indexPath.section)
+            cell.set(viewModel: cellItem, isSelected: isSelected)
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: UniversityCell.identifier, for: indexPath) as! UniversityCell
-            let provinceItem = viewModel.cellItemAt(indexPath: IndexPath(row: indexPath.section, section: 0))
-            let universityItem = provinceItem.province.universities[indexPath.row - 1]
-            let universityModel = UniversityCellModel(university: [universityItem])
-            cell.set(viewModel: universityModel)
-            return cell
+            let province = viewModel.cellItemAt(indexPath: IndexPath(row: indexPath.section, section: 0)).province
+            var universityCount = 0
+            for i in 0..<province.universities.count {
+                let universityIndexPath = IndexPath(row: i, section: indexPath.section)
+                if indexPath.row == 1 + universityCount {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: UniversityCell.identifier, for: indexPath) as! UniversityCell
+                    cell.backgroundColor = .appYellow.withAlphaComponent(0.9)
+                    let universityModel = UniversityCellModel(university: [province.universities[i]])
+                    let isSelected = expandedUniversityDetails.contains(universityIndexPath)
+                    cell.set(viewModel: universityModel, isSelected: isSelected)
+                    return cell
+                }
+                universityCount += 1
+                if expandedUniversityDetails.contains(universityIndexPath) {
+                    if indexPath.row == 1 + universityCount {
+                        let cell = tableView.dequeueReusableCell(withIdentifier: DetailCell.identifier, for: indexPath) as! DetailCell
+                        cell.backgroundColor = .appWhite
+                        cell.delegate = self
+                        let detailModel = DetailCellModel(detail: [province.universities[i]])
+                        cell.set(viewModel: detailModel)
+                        return cell
+                    }
+                    universityCount += 1
+                }
+            }
         }
+            fatalError("Unexpected IndexPath")
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            if expandedSections.contains(indexPath.section) {
-                expandedSections.remove(indexPath.section)
+            if expandedProvinceSections.contains(indexPath.section) {
+                expandedProvinceSections.remove(indexPath.section)
+                expandedUniversityDetails = expandedUniversityDetails.filter { $0.section != indexPath.section }
             } else {
-                expandedSections.insert(indexPath.section)
+                expandedProvinceSections.insert(indexPath.section)
             }
             tableView.reloadSections(IndexSet(integer: indexPath.section), with: .automatic)
-            if let cell = tableView.cellForRow(at: indexPath) as? ProvinceCell {
-                if expandedSections.contains(indexPath.section) {
-                    cell.iconImage.image = UIImage(named: "icMinus")
-                } else {
-                    cell.iconImage.image = UIImage(named: "icPlus")
+        }else {
+            let province = viewModel.cellItemAt(indexPath: IndexPath(row: indexPath.section, section: 0)).province
+            var currentRow = 1
+            for i in 0..<province.universities.count {
+                if indexPath.row == currentRow {
+                    let universityIndexPath = IndexPath(row: i, section: indexPath.section)
+                    if expandedUniversityDetails.contains(universityIndexPath) {
+                        expandedUniversityDetails.remove(universityIndexPath)
+                    } else {
+                        expandedUniversityDetails = expandedUniversityDetails.filter { $0.section != indexPath.section }
+                        expandedUniversityDetails.insert(universityIndexPath)
+                    }
+                    
+                    if let cell = tableView.cellForRow(at: indexPath) as? UniversityCell, cell.iconImagePlus.image != nil {
+                        tableView.reloadSections(IndexSet(integer: indexPath.section), with: .automatic)
+                    }
+                    break
+                }
+                currentRow += 1
+                if expandedUniversityDetails.contains(IndexPath(row: i, section: indexPath.section)) {
+                    currentRow += 1
                 }
             }
         }
@@ -103,5 +184,21 @@ extension UniversityViewController: UITableViewDataSource, UITableViewDelegate {
         if position > customTableView.tableView.contentSize.height - 100 - scrollView.frame.size.height && viewModel.isPagingEnabled && viewModel.isRequestEnabled{
             viewModel.fetchData()
         }
+    }
+}
+//MARK: - DetailCellDelegate
+extension UniversityViewController: DetailCellDelegate {
+    
+    func detailCellDidTapPhone(_ cell: DetailCell, phoneNumber: String) {
+        if let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    func detailCellDidTapWebsite(_ cell: DetailCell, webSite websiteURL: String, navTitle: String) {
+        let webViewController = WebViewController()
+        webViewController.websiteURL = websiteURL
+        webViewController.universityName = navTitle
+        navigationController?.pushViewController(webViewController, animated: true)
     }
 }
