@@ -16,6 +16,7 @@ protocol UniversityCellEventSource: AnyObject{}
 protocol UniversityCellProtocol: UniversityCellDataSource, UniversityCellEventSource{}
 
 final class UniversityCellModel: UniversityCellProtocol{
+    
     var university: [UniversityDetail]
     
     init(university: [UniversityDetail]) {

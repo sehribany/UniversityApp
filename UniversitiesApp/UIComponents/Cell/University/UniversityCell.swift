@@ -28,12 +28,23 @@ class UniversityCell: UITableViewCell {
     private let favoriteButton: UIButton = {
         let button = UIButton()
         button.contentMode = .scaleAspectFit
-        button.isUserInteractionEnabled = true
+        button.setImage(UIImage(named:"icFavorite"), for: .normal)
+        button.height(40)
+        button.width(40)
+        button.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
+    var isFavorite: Bool = false {
+        didSet {
+            let imageName = isFavorite ? "icFavoriteFill" : "icFavorite"
+            favoriteButton.setImage(UIImage(named: imageName), for: .normal)
+        }
+    }
+    
     weak var viewModel : UniversityCellProtocol?
+    weak var viewController: UIViewController?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -48,6 +59,12 @@ class UniversityCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    @objc private func favoriteButtonTapped() {
+        isFavorite.toggle()
+        let imageName = isFavorite ? "icFavoriteFill" : "icFavorite"
+        favoriteButton.setImage(UIImage(named: imageName), for: .normal)
+    }
 }
 
 //MARK: - UILayout and Set
@@ -59,36 +76,33 @@ extension UniversityCell{
     }
     
     private func addImageIcons(){
-        addSubview(iconImagePlus)
+        contentView.addSubview(iconImagePlus)
         iconImagePlus.leadingToSuperview().constant = 20
         iconImagePlus.centerYToSuperview()
     }
 
     private func addProvinceLabel(){
-        addSubview(universityLabel)
+        contentView.addSubview(universityLabel)
         universityLabel.leadingToSuperview().constant = 50
         universityLabel.trailingToSuperview().constant = -80
         universityLabel.centerYToSuperview()
     }
     
     private func addFavoriteButton(){
-        addSubview(favoriteButton)
+        contentView.addSubview(favoriteButton)
         favoriteButton.trailingToSuperview().constant = -23
         favoriteButton.centerYToSuperview()
-        favoriteButton.width(40)
-        favoriteButton.height(40)
     }
     
-    public func set(viewModel: UniversityCellProtocol){
+    public func set(viewModel: UniversityCellProtocol, isSelected: Bool){
         self.viewModel = viewModel
-        favoriteButton.setImage(UIImage(named:"icFavorite"), for: .normal)
         let university = viewModel.university
         universityLabel.text =  university.map({$0.name}).joined()
 
         let additionalInfoExists = university.map({ $0.adress}).contains("-") && university.map({ $0.email}).contains("-") && university.map({ $0.fax}).contains("-") && university.map({ $0.phone}).contains("-") && university.map({ $0.rector}).contains("-") && university.map({ $0.website}).contains("-")
             
         if !additionalInfoExists {
-            iconImagePlus.image = UIImage(named: "icPlus")
+            iconImagePlus.image = isSelected ? UIImage(named: "icMinus") : UIImage(named: "icPlus")
         } else {
             iconImagePlus.image = nil
         }
